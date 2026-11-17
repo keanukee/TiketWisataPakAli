@@ -1,0 +1,146 @@
+:root {
+    --mazer-primary: #435ebe;
+    --mazer-primary-dark: #364b98;
+    --mazer-bg: #f2f7ff;
+    --mazer-sidebar-w: 270px;
+}
+
+body {
+    background-color: var(--mazer-bg);
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #25396f;
+}
+
+#sidebar {
+    width: var(--mazer-sidebar-w);
+    min-height: 100vh;
+    background: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1030;
+    box-shadow: 0 0 25px rgba(67, 94, 190, 0.08);
+    transition: all 0.3s ease;
+}
+
+#sidebar .sidebar-header {
+    padding: 1.5rem 1.5rem 1rem;
+    border-bottom: 1px solid #eef2ff;
+}
+
+#sidebar .brand-title {
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: var(--mazer-primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+#sidebar .sidebar-menu {
+    padding: 1rem;
+    list-style: none;
+    margin: 0;
+}
+
+#sidebar .sidebar-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #7c8db5;
+    padding: 0.9rem 1rem 0.4rem;
+}
+
+#sidebar .sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.72rem 1rem;
+    border-radius: 0.65rem;
+    color: #25396f;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: 0.25rem;
+    transition: all 0.2s;
+}
+
+#sidebar .sidebar-link:hover {
+    background-color: #f0f3ff;
+    color: var(--mazer-primary);
+}
+
+#sidebar .sidebar-link.active {
+    background-color: var(--mazer-primary);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(67, 94, 190, 0.3);
+}
+
+#main-content {
+    margin-left: var(--mazer-sidebar-w);
+    padding: 1.5rem 2rem;
+    min-height: 100vh;
+    transition: all 0.3s ease;
+}
+
+.card-mazer {
+    border: none;
+    border-radius: 0.9rem;
+    box-shadow: 0 4px 20px rgba(37, 57, 111, 0.05);
+    background: #ffffff;
+}
+
+.stats-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    color: #fff;
+}
+
+.btn-primary {
+    background-color: var(--mazer-primary);
+    border-color: var(--mazer-primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--mazer-primary-dark);
+    border-color: var(--mazer-primary-dark);
+}
+
+.destinasi-img {
+    height: 190px;
+    object-fit: cover;
+    border-top-left-radius: 0.9rem;
+    border-top-right-radius: 0.9rem;
+}
+
+@media (max-width: 991.98px) {
+    #sidebar {
+        left: calc(-1 * var(--mazer-sidebar-w));
+    }
+    #sidebar.active {
+        left: 0;
+    }
+    #main-content {
+        margin-left: 0;
+        padding: 1rem;
+    }
+}
+
+@media print {
+    #sidebar, .no-print {
+        display: none !important;
+    }
+    #main-content {
+        margin-left: 0 !important;
+        padding: 0 !important;
+    }
+    body {
+        background: #fff !important;
+    }
+}
