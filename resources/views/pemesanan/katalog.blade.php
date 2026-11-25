@@ -41,7 +41,7 @@
                     </div>
                     <h5 class="fw-bold">{{ $d->nama_wisata }}</h5>
                     <p class="small text-muted mb-2"><i class="bi bi-geo-alt-fill text-danger"></i> {{ $d->lokasi }}</p>
-                    <p class="small text-secondary">{{ Str::limit($d->deskripsi, 110) }}</p>
+                    <p class="small text-secondary">{{ \Illuminate\Support\Str::limit($d->deskripsi, 110) }}</p>
                     <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center">
                         <div>
                             <small class="text-muted d-block">Harga Tiket</small>
